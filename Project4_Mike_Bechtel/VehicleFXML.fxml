@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="593.0" prefWidth="1065.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="VehicleController">
+   <children>
+      <Label fx:id="fxType" layoutX="27.0" layoutY="35.0" text="Vehicle Type: " />
+      <Label fx:id="fxMake" layoutX="26.0" layoutY="107.0" text="Vehicle Make:" />
+      <Label fx:id="fxYear" layoutX="26.0" layoutY="203.0" text="Year:" />
+      <Label fx:id="fxBasePrice" layoutX="22.0" layoutY="149.0" text="Base Price:" />
+      <Label fx:id="fxOptions" layoutX="525.0" layoutY="35.0" text="Options Package:" />
+      <Label fx:id="fxTowing" layoutX="26.0" layoutY="305.0" text="Towing Capacity:" />
+      <Label fx:id="fxVIN" layoutX="26.0" layoutY="251.0" text="VIN Number:" />
+      <Label fx:id="fxAccident" layoutX="526.0" layoutY="107.0" text="Accident:" />
+      <Label fx:id="fxAccidentStatus" layoutX="522.0" layoutY="185.0" text="Accident Status:" />
+      <TextField fx:id="fxMakeText" layoutX="250.0" layoutY="117.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="251.0" />
+      <TextField fx:id="fxYearText" layoutX="250.0" layoutY="213.0" minHeight="-Infinity" prefHeight="26.0" prefWidth="251.0" />
+      <TextField fx:id="fxBPText" layoutX="250.0" layoutY="159.0" minHeight="-Infinity" prefHeight="26.0" prefWidth="251.0" />
+      <TextField fx:id="fxTowingText" disable="true" layoutX="256.0" layoutY="315.0" minHeight="-Infinity" prefHeight="26.0" prefWidth="251.0" />
+      <TextField fx:id="fxVINText" layoutX="256.0" layoutY="260.0" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="251.0" />
+      <RadioButton fx:id="fxCarRadio" layoutX="250.0" layoutY="35.0" mnemonicParsing="false" onAction="#truckTowingEventListener" selected="true" text="Car">
+         <toggleGroup>
+            <ToggleGroup fx:id="TypeGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="fxTruckRadio" layoutX="366.0" layoutY="35.0" mnemonicParsing="false" onAction="#truckTowingEventListener" text="Truck" toggleGroup="$TypeGroup" />
+      <RadioButton fx:id="fxOptYRadio" layoutX="759.0" layoutY="35.0" mnemonicParsing="false" text="Yes">
+         <toggleGroup>
+            <ToggleGroup fx:id="OptionsGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="fxOptNRadio" layoutX="868.0" layoutY="35.0" mnemonicParsing="false" selected="true" text="No" toggleGroup="$OptionsGroup" />
+      <RadioButton fx:id="fxAccYRadio" layoutX="757.0" layoutY="107.0" mnemonicParsing="false" onAction="#accidentStatusEventListener" text="Yes">
+         <toggleGroup>
+            <ToggleGroup fx:id="AccidentGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="fxAccNRadio" layoutX="868.0" layoutY="108.0" mnemonicParsing="false" onAction="#accidentStatusEventListener" selected="true" text="No" toggleGroup="$AccidentGroup" />
+      <RadioButton fx:id="fxStatusMajRadio" layoutX="759.0" layoutY="185.0" mnemonicParsing="false" onAction="#accidentStatusEventListener" text="Major">
+         <toggleGroup>
+            <ToggleGroup fx:id="accStatusGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="fxStatusMinorRadio" layoutX="758.0" layoutY="238.0" mnemonicParsing="false" onAction="#accidentStatusEventListener" text="Minor" toggleGroup="$accStatusGroup" />
+      <RadioButton fx:id="fxStatusNARadio" layoutX="759.0" layoutY="292.0" mnemonicParsing="false" onAction="#accidentStatusEventListener" selected="true" text="N/A" toggleGroup="$accStatusGroup" />
+      <Button fx:id="fxSubmitButton" layoutX="23.0" layoutY="372.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#submitButtonEvent" prefHeight="58.0" prefWidth="402.0" text="Submit Vehicle Information" />
+      <Label fx:id="fxoutputLabel" layoutX="529.0" layoutY="350.0" prefHeight="222.0" prefWidth="457.0" wrapText="true" />
+   </children>
+</AnchorPane>
